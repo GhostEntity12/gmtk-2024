@@ -1,0 +1,110 @@
+{
+    "name": "InputActions",
+    "maps": [
+        {
+            "name": "GeneralGameplay",
+            "id": "31c4dfdb-3a94-41ef-b9b4-c48243a55a8f",
+            "actions": [
+                {
+                    "name": "SwingCamera",
+                    "type": "Button",
+                    "id": "b1ff7567-e7f8-4680-ba81-37077ed1ac83",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7583e00c-df3d-466c-b5e2-99a5644b3a26",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwingCamera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Counter",
+            "id": "3aac7470-7c1b-4faa-829f-256b7f36e313",
+            "actions": [
+                {
+                    "name": "Serve",
+                    "type": "Button",
+                    "id": "bbc543ac-c9c6-47e3-be06-fd49a7ffb0da",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "22ffd9aa-2c50-444b-9b41-424d4760d8ad",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Serve",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Ray",
+            "id": "87ae3799-d28a-4f1d-9697-fd1240b64076",
+            "actions": [
+                {
+                    "name": "Shrink",
+                    "type": "Button",
+                    "id": "710e09dc-03d0-4c8c-8d4e-3d89decedbe8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Grow",
+                    "type": "Button",
+                    "id": "bbfdccec-9976-45af-9ec4-8847e50b5f94",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e1d6c724-40a9-442b-8466-8333b5a96dec",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shrink",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3947910c-0b17-4022-b85f-a13220845315",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Grow",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
