@@ -19,3 +19,9 @@ MonoBehaviour:
   acceptableOffset: 0.25
   okayOffset: 0.5
   upsetOffset: 0.75
+  sounds:
+  - {fileID: 8300000, guid: 3d6af6fec1f0cec4ca24486d94e5e196, type: 3}
+  - {fileID: 8300000, guid: 3d6af6fec1f0cec4ca24486d94e5e196, type: 3}
+  - {fileID: 8300000, guid: 3d6af6fec1f0cec4ca24486d94e5e196, type: 3}
+  - {fileID: 8300000, guid: ed8f6716ccf8e5448a8e346e0be506bf, type: 3}
+  - {fileID: 8300000, guid: ed8f6716ccf8e5448a8e346e0be506bf, type: 3}
