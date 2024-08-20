@@ -10583,6 +10583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleSpeed: 0.4
   sizeRange: {x: 0.5, y: 5}
+  currentStatus: 0
 --- !u!95 &521414180
 Animator:
   serializedVersion: 5
@@ -20958,7 +20959,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 74bbc5d9fd17aea459bc1b0ced2d8992, type: 2}
   - {fileID: 11400000, guid: 28d2b6572895a9e469dba92b890ae6c2, type: 2}
   - {fileID: 11400000, guid: 8886d30b5ba6e104c9903e058fcc19f1, type: 2}
-  activeAnimal: {fileID: 1407115348}
+  <ActiveAnimal>k__BackingField: {fileID: 1407115348}
+  <Pizza>k__BackingField: {fileID: 521414179}
 --- !u!4 &1422408901
 Transform:
   m_ObjectHideFlags: 0

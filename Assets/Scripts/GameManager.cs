@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -19,7 +20,9 @@ public class GameManager : Singleton<GameManager>
 	/// <summary>
 	/// Holds the "active animal" object. Shouldn't be overwritten at any point.
 	/// </summary>
-	[SerializeField] private Animal activeAnimal;
+	[field: SerializeField] public Animal ActiveAnimal { get; private set; }
+
+	[field: SerializeField] public Pizza Pizza { get; private set; }
 
 	// Start is called before the first frame update
 	protected override void Awake()
@@ -71,6 +74,14 @@ public class GameManager : Singleton<GameManager>
 			_ => 0,
 		};
 	}
+
+	public void EvaluatePizza(float size)
+	{
+		int ranking = GetRanking(ActiveAnimal.Data, size, out bool larger);
+		ActiveAnimal.SpeechBubble.SetValues(ranking, larger);
+		ActiveAnimal.SpeechBubble.SetVisibility(true);
+	}
+
 
 	public void OnDayFinished()
 	{

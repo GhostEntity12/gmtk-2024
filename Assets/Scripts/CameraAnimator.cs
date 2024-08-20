@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class CameraAnimator : MonoBehaviour
 {
 	// State tracking
-	private bool facingFront = true;
+	public bool FacingFront { get; private set; } = true;
 	private bool isAnimating = false;
 
 	private Animator anim;
@@ -38,16 +38,18 @@ public class CameraAnimator : MonoBehaviour
 		if (!isAnimating)
 		{
 			// Disable active inputs
-			if (facingFront) inputs.Counter.Disable();
+			if (FacingFront) inputs.Counter.Disable();
 			else inputs.Ray.Disable();
 
 			// Store whether the camera is facing forward
-			facingFront = !facingFront;
+			FacingFront = !FacingFront;
 
 			// Trigger the animation
-			anim.SetBool("FacingFront", facingFront);
+			anim.SetBool("FacingFront", FacingFront);
 			// Flag as animating
 			isAnimating = true;
+			// Move the pizza
+			GameManager.Instance.Pizza.MovePizza(FacingFront);
 		}
 	}
 
@@ -59,7 +61,7 @@ public class CameraAnimator : MonoBehaviour
 		isAnimating = false;
 
 		// Enable appropriate inputs
-		if (facingFront) inputs.Counter.Enable();
+		if (FacingFront) inputs.Counter.Enable();
 		else inputs.Ray.Enable();
 	}
 }
