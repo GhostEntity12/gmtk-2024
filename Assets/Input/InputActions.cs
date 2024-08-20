@@ -126,6 +126,114 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Debug"",
+            ""id"": ""19156566-84cf-47a3-9f55-8b05e0a59f93"",
+            ""actions"": [
+                {
+                    ""name"": ""RandomiseBubble"",
+                    ""type"": ""Button"",
+                    ""id"": ""c67bab24-506e-4bf4-bbbb-04df39ab8b6c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ShowBubble"",
+                    ""type"": ""Button"",
+                    ""id"": ""bb93be9d-3838-4441-9ab1-8b15337d0f98"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""HideBubble"",
+                    ""type"": ""Button"",
+                    ""id"": ""2791bc49-b838-4f2c-b976-7c9a34488454"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MoveAnimalOn"",
+                    ""type"": ""Button"",
+                    ""id"": ""ea558ab9-b9a1-4568-a08a-c44374165434"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MoveAnimalOff"",
+                    ""type"": ""Button"",
+                    ""id"": ""11a935a5-6d4e-4c88-af1d-ca6315eb537a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""e24436e0-4980-41a7-99bd-a293e810b823"",
+                    ""path"": ""<Keyboard>/u"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ShowBubble"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c0f68419-25ba-4ad2-b681-565807c8738c"",
+                    ""path"": ""<Keyboard>/o"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveAnimalOn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eb09880e-007b-4498-af30-4b2162f6435d"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveAnimalOff"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4dce8cae-9177-46b1-9f73-7faf4e1b6981"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HideBubble"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cefee580-0d41-44fd-8836-61dc93a1f8f0"",
+                    ""path"": ""<Keyboard>/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RandomiseBubble"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -140,6 +248,13 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_Ray = asset.FindActionMap("Ray", throwIfNotFound: true);
         m_Ray_Shrink = m_Ray.FindAction("Shrink", throwIfNotFound: true);
         m_Ray_Grow = m_Ray.FindAction("Grow", throwIfNotFound: true);
+        // Debug
+        m_Debug = asset.FindActionMap("Debug", throwIfNotFound: true);
+        m_Debug_RandomiseBubble = m_Debug.FindAction("RandomiseBubble", throwIfNotFound: true);
+        m_Debug_ShowBubble = m_Debug.FindAction("ShowBubble", throwIfNotFound: true);
+        m_Debug_HideBubble = m_Debug.FindAction("HideBubble", throwIfNotFound: true);
+        m_Debug_MoveAnimalOn = m_Debug.FindAction("MoveAnimalOn", throwIfNotFound: true);
+        m_Debug_MoveAnimalOff = m_Debug.FindAction("MoveAnimalOff", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -343,6 +458,84 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         }
     }
     public RayActions @Ray => new RayActions(this);
+
+    // Debug
+    private readonly InputActionMap m_Debug;
+    private List<IDebugActions> m_DebugActionsCallbackInterfaces = new List<IDebugActions>();
+    private readonly InputAction m_Debug_RandomiseBubble;
+    private readonly InputAction m_Debug_ShowBubble;
+    private readonly InputAction m_Debug_HideBubble;
+    private readonly InputAction m_Debug_MoveAnimalOn;
+    private readonly InputAction m_Debug_MoveAnimalOff;
+    public struct DebugActions
+    {
+        private @InputActions m_Wrapper;
+        public DebugActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @RandomiseBubble => m_Wrapper.m_Debug_RandomiseBubble;
+        public InputAction @ShowBubble => m_Wrapper.m_Debug_ShowBubble;
+        public InputAction @HideBubble => m_Wrapper.m_Debug_HideBubble;
+        public InputAction @MoveAnimalOn => m_Wrapper.m_Debug_MoveAnimalOn;
+        public InputAction @MoveAnimalOff => m_Wrapper.m_Debug_MoveAnimalOff;
+        public InputActionMap Get() { return m_Wrapper.m_Debug; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(DebugActions set) { return set.Get(); }
+        public void AddCallbacks(IDebugActions instance)
+        {
+            if (instance == null || m_Wrapper.m_DebugActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_DebugActionsCallbackInterfaces.Add(instance);
+            @RandomiseBubble.started += instance.OnRandomiseBubble;
+            @RandomiseBubble.performed += instance.OnRandomiseBubble;
+            @RandomiseBubble.canceled += instance.OnRandomiseBubble;
+            @ShowBubble.started += instance.OnShowBubble;
+            @ShowBubble.performed += instance.OnShowBubble;
+            @ShowBubble.canceled += instance.OnShowBubble;
+            @HideBubble.started += instance.OnHideBubble;
+            @HideBubble.performed += instance.OnHideBubble;
+            @HideBubble.canceled += instance.OnHideBubble;
+            @MoveAnimalOn.started += instance.OnMoveAnimalOn;
+            @MoveAnimalOn.performed += instance.OnMoveAnimalOn;
+            @MoveAnimalOn.canceled += instance.OnMoveAnimalOn;
+            @MoveAnimalOff.started += instance.OnMoveAnimalOff;
+            @MoveAnimalOff.performed += instance.OnMoveAnimalOff;
+            @MoveAnimalOff.canceled += instance.OnMoveAnimalOff;
+        }
+
+        private void UnregisterCallbacks(IDebugActions instance)
+        {
+            @RandomiseBubble.started -= instance.OnRandomiseBubble;
+            @RandomiseBubble.performed -= instance.OnRandomiseBubble;
+            @RandomiseBubble.canceled -= instance.OnRandomiseBubble;
+            @ShowBubble.started -= instance.OnShowBubble;
+            @ShowBubble.performed -= instance.OnShowBubble;
+            @ShowBubble.canceled -= instance.OnShowBubble;
+            @HideBubble.started -= instance.OnHideBubble;
+            @HideBubble.performed -= instance.OnHideBubble;
+            @HideBubble.canceled -= instance.OnHideBubble;
+            @MoveAnimalOn.started -= instance.OnMoveAnimalOn;
+            @MoveAnimalOn.performed -= instance.OnMoveAnimalOn;
+            @MoveAnimalOn.canceled -= instance.OnMoveAnimalOn;
+            @MoveAnimalOff.started -= instance.OnMoveAnimalOff;
+            @MoveAnimalOff.performed -= instance.OnMoveAnimalOff;
+            @MoveAnimalOff.canceled -= instance.OnMoveAnimalOff;
+        }
+
+        public void RemoveCallbacks(IDebugActions instance)
+        {
+            if (m_Wrapper.m_DebugActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IDebugActions instance)
+        {
+            foreach (var item in m_Wrapper.m_DebugActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_DebugActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public DebugActions @Debug => new DebugActions(this);
     public interface IGeneralGameplayActions
     {
         void OnSwingCamera(InputAction.CallbackContext context);
@@ -355,5 +548,13 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     {
         void OnShrink(InputAction.CallbackContext context);
         void OnGrow(InputAction.CallbackContext context);
+    }
+    public interface IDebugActions
+    {
+        void OnRandomiseBubble(InputAction.CallbackContext context);
+        void OnShowBubble(InputAction.CallbackContext context);
+        void OnHideBubble(InputAction.CallbackContext context);
+        void OnMoveAnimalOn(InputAction.CallbackContext context);
+        void OnMoveAnimalOff(InputAction.CallbackContext context);
     }
 }

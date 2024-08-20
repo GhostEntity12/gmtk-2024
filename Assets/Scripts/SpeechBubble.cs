@@ -12,10 +12,10 @@ public class SpeechBubble : MonoBehaviour
 	[SerializeField] private Sprite[] emotes;
 	[SerializeField] private Sprite largerArrow;
 	[SerializeField] private Sprite smallerArrow;
-    
+
 	public void SetOffset(Vector2 offset) => transform.localPosition = new(offset.x, offset.y, -0.5f);
 
-	public void Show(int ranking, bool sizeIsLarger = true)
+	public void SetValues(int ranking, bool sizeIsLarger = true)
 	{
 		// Setting up sprites
 		emoteSprite.sprite = emotes[ranking];
@@ -26,6 +26,7 @@ public class SpeechBubble : MonoBehaviour
 			// Show the indicator for if the pizza should have been bigger or smaller
 			pizzaSprite.enabled = true;
 			arrowSprite.enabled = true;
+			// Set the appropriate arrow sprite
 			arrowSprite.sprite = sizeIsLarger ? largerArrow : smallerArrow;
 		}
 		else
@@ -36,12 +37,19 @@ public class SpeechBubble : MonoBehaviour
 			arrowSprite.enabled = false;
 		}
 
-		// Reveal the speech bubble
-		LeanTween.scale(gameObject, Vector3.one, 0.5f).setEaseOutBack();
 	}
 
-	public void Hide()
+	public void SetVisibility(bool visible)
 	{
-		LeanTween.scale(gameObject, Vector3.zero, 0.5f).setEaseInBack();
+		if (visible)
+		{
+			// Reveal the speech bubble
+			LeanTween.scale(gameObject, Vector3.one, 0.5f).setEaseOutBack();
+		}
+		else
+		{
+			// Hide the speech bubble
+			LeanTween.scale(gameObject, Vector3.zero, 0.5f).setEaseInBack();
+		}
 	}
 }

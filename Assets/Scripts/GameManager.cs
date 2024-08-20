@@ -43,7 +43,7 @@ public class GameManager : Singleton<GameManager>
 	/// <param name="size">The size of the pizza.</param>
 	/// <param name="sizeIsLarger">Whether the size is larger or smaller than the ideal range. Defaults to larger if the value is in the ideal range.</param>
 	/// <returns></returns>
-	static int GetRanking(AnimalData animal, float size, out bool sizeIsLarger)
+	public static int GetRanking(AnimalData animal, float size, out bool sizeIsLarger)
 	{
 		// If falls within the ideal range
 		if (size > animal.idealSizeRange.x && size < animal.idealSizeRange.y)
@@ -70,5 +70,10 @@ public class GameManager : Singleton<GameManager>
 			float i when i <= animal.upsetOffset => 1,
 			_ => 0,
 		};
+	}
+
+	public void OnDayFinished()
+	{
+
 	}
 }
