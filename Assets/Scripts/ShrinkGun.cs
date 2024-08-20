@@ -10,9 +10,16 @@ public class ShrinkGun : MonoBehaviour
 
 	[SerializeField] private Pizza pizza;
 
+	AudioSource audioSource;
+
 	public Beam ActiveBeam { get; private set; } = Beam.None;
 
 	private InputActions inputs;
+
+	private void Awake()
+	{
+		audioSource = GetComponent<AudioSource>();
+	}
 
 	private void Start()
 	{
@@ -39,6 +46,10 @@ public class ShrinkGun : MonoBehaviour
 		// Enable the beam
 		ActiveBeam = Beam.Grow;
 		beamGrow.Play();
+		if (!audioSource.isPlaying)
+		{
+			audioSource.Play();
+		}
 	}
 
 	/// <summary>
@@ -60,6 +71,7 @@ public class ShrinkGun : MonoBehaviour
 			return;
 		}
 		ActiveBeam = Beam.None;
+		audioSource.Stop();
 	}
 
 	/// <summary>
@@ -76,6 +88,10 @@ public class ShrinkGun : MonoBehaviour
 		// Enable the beam
 		ActiveBeam = Beam.Shrink;
 		beamShrink.Play();
+		if (!audioSource.isPlaying)
+		{
+			audioSource.Play();
+		}
 	}
 
 	/// <summary>
@@ -97,6 +113,7 @@ public class ShrinkGun : MonoBehaviour
 			return;
 		}
 		ActiveBeam = Beam.None;
+		audioSource.Stop();
 	}
 
 	private void Update()

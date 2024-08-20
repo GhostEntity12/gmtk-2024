@@ -5,7 +5,7 @@ public class Animal : MonoBehaviour
 	private AnimalData currentAnimal;
 	private Animator anim;
 	private bool onscreen;
-	private bool isMoving;
+	public bool IsMoving { get; private set; }
 
 	[SerializeField] private SpriteRenderer animalSprite;
 
@@ -34,10 +34,10 @@ public class Animal : MonoBehaviour
 	/// </summary>
 	/// <param name="moveOnscreen">Use true if trying to move the animal onscreen, or false if trying to move the animal offscreen</param>
 	/// <returns>Returns if the movement started correctly</returns>
-	public bool Move(bool moveOnscreen)
+	public bool Move(bool moveOnscreen, bool forced = false)
 	{
 		// Fail if already moving
-		if (isMoving) return false;
+		if (IsMoving && !forced) return false;
 
 		// Animal is alrady in the requested position
 		if ((moveOnscreen && onscreen) || (!moveOnscreen && !onscreen))
@@ -49,16 +49,32 @@ public class Animal : MonoBehaviour
 		// Move the animal
 		anim.SetTrigger(moveOnscreen ? "WalkOn" : "WalkOff");
 		onscreen = moveOnscreen;
-		isMoving = true;
+		IsMoving = true;
 		return true;
 	}
 
+	// Called by AnimationEvent
 	public void HideBubble() => SpeechBubble.SetVisibility(false);
 
+	// Called by AnimationEvent
 	public void OnFinishMoving()
 	{
-		// If finished moving offscreen, generate a new animal and attempt to move the animal onscreen
-		if (!onscreen && Move(true))
+		IsMoving = false;
+		// If finished moving offscreen, generate a new animal
+		if (!onscreen)
+		{
+			GameManager.Instance.Pizza.SpawnPizza();
+			
+			if (GameManager.Instance.IsEndOfDay) return;
+			
+			SpawnNewAnimal();
+		}
+	}
+
+	public void SpawnNewAnimal()
+	{
+		// Begin moving the sprite
+		if (Move(true))
 		{
 			// Randomise the animal
 			Data = GameManager.Instance.Animals[Random.Range(0, GameManager.Instance.Animals.Length)];

@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Animator))]
 public class CameraAnimator : MonoBehaviour
 {
+	[SerializeField] AudioClip cameraMoveSFX;
 	// State tracking
 	public bool FacingFront { get; private set; } = true;
 	private bool isAnimating = false;
@@ -28,6 +29,13 @@ public class CameraAnimator : MonoBehaviour
 		inputs.Counter.Enable();
 	}
 
+	public void StartGame()
+	{
+		anim.SetTrigger("FromMenu");
+		GameManager.Instance.ToggleAudioGameplay();
+		GameManager.Instance.StartDay(true);
+	}
+
 	/// <summary>
 	/// Swings the camera
 	/// </summary>
@@ -50,6 +58,8 @@ public class CameraAnimator : MonoBehaviour
 			isAnimating = true;
 			// Move the pizza
 			GameManager.Instance.Pizza.MovePizza(FacingFront);
+			// Play audio
+			GameManager.Instance.PlaySFX(cameraMoveSFX);
 		}
 	}
 
@@ -63,5 +73,12 @@ public class CameraAnimator : MonoBehaviour
 		// Enable appropriate inputs
 		if (FacingFront) inputs.Counter.Enable();
 		else inputs.Ray.Enable();
+	}
+
+	public void EndDay() => anim.SetTrigger("EndDay");
+
+	public void ResetCamera()
+	{
+		anim.SetTrigger("StartDay");
 	}
 }

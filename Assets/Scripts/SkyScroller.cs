@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SkyScroller : MonoBehaviour
 {
-	[SerializeField] float dayLength = 20;
+	[SerializeField] float dayLength = 90;
 	float daytimeElapsed;
 	bool progressTime = false;
 
@@ -30,5 +30,6 @@ public class SkyScroller : MonoBehaviour
 	{
 		daytimeElapsed = 0;
 		transform.position = new(0, -35, 8);
+		progressTime = true;
 	}
 }

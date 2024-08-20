@@ -132,7 +132,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             ""id"": ""19156566-84cf-47a3-9f55-8b05e0a59f93"",
             ""actions"": [
                 {
-                    ""name"": ""RandomiseBubble"",
+                    ""name"": ""Y"",
                     ""type"": ""Button"",
                     ""id"": ""c67bab24-506e-4bf4-bbbb-04df39ab8b6c"",
                     ""expectedControlType"": ""Button"",
@@ -141,7 +141,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""ShowBubble"",
+                    ""name"": ""U"",
                     ""type"": ""Button"",
                     ""id"": ""bb93be9d-3838-4441-9ab1-8b15337d0f98"",
                     ""expectedControlType"": ""Button"",
@@ -150,7 +150,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""HideBubble"",
+                    ""name"": ""I"",
                     ""type"": ""Button"",
                     ""id"": ""2791bc49-b838-4f2c-b976-7c9a34488454"",
                     ""expectedControlType"": ""Button"",
@@ -159,7 +159,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""MoveAnimalOn"",
+                    ""name"": ""O"",
                     ""type"": ""Button"",
                     ""id"": ""ea558ab9-b9a1-4568-a08a-c44374165434"",
                     ""expectedControlType"": ""Button"",
@@ -168,7 +168,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""MoveAnimalOff"",
+                    ""name"": ""P"",
                     ""type"": ""Button"",
                     ""id"": ""11a935a5-6d4e-4c88-af1d-ca6315eb537a"",
                     ""expectedControlType"": ""Button"",
@@ -185,7 +185,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""ShowBubble"",
+                    ""action"": ""U"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -196,7 +196,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MoveAnimalOn"",
+                    ""action"": ""O"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -207,7 +207,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MoveAnimalOff"",
+                    ""action"": ""P"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -218,7 +218,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""HideBubble"",
+                    ""action"": ""I"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -229,7 +229,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RandomiseBubble"",
+                    ""action"": ""Y"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -250,11 +250,11 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_Ray_Grow = m_Ray.FindAction("Grow", throwIfNotFound: true);
         // Debug
         m_Debug = asset.FindActionMap("Debug", throwIfNotFound: true);
-        m_Debug_RandomiseBubble = m_Debug.FindAction("RandomiseBubble", throwIfNotFound: true);
-        m_Debug_ShowBubble = m_Debug.FindAction("ShowBubble", throwIfNotFound: true);
-        m_Debug_HideBubble = m_Debug.FindAction("HideBubble", throwIfNotFound: true);
-        m_Debug_MoveAnimalOn = m_Debug.FindAction("MoveAnimalOn", throwIfNotFound: true);
-        m_Debug_MoveAnimalOff = m_Debug.FindAction("MoveAnimalOff", throwIfNotFound: true);
+        m_Debug_Y = m_Debug.FindAction("Y", throwIfNotFound: true);
+        m_Debug_U = m_Debug.FindAction("U", throwIfNotFound: true);
+        m_Debug_I = m_Debug.FindAction("I", throwIfNotFound: true);
+        m_Debug_O = m_Debug.FindAction("O", throwIfNotFound: true);
+        m_Debug_P = m_Debug.FindAction("P", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -462,20 +462,20 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     // Debug
     private readonly InputActionMap m_Debug;
     private List<IDebugActions> m_DebugActionsCallbackInterfaces = new List<IDebugActions>();
-    private readonly InputAction m_Debug_RandomiseBubble;
-    private readonly InputAction m_Debug_ShowBubble;
-    private readonly InputAction m_Debug_HideBubble;
-    private readonly InputAction m_Debug_MoveAnimalOn;
-    private readonly InputAction m_Debug_MoveAnimalOff;
+    private readonly InputAction m_Debug_Y;
+    private readonly InputAction m_Debug_U;
+    private readonly InputAction m_Debug_I;
+    private readonly InputAction m_Debug_O;
+    private readonly InputAction m_Debug_P;
     public struct DebugActions
     {
         private @InputActions m_Wrapper;
         public DebugActions(@InputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @RandomiseBubble => m_Wrapper.m_Debug_RandomiseBubble;
-        public InputAction @ShowBubble => m_Wrapper.m_Debug_ShowBubble;
-        public InputAction @HideBubble => m_Wrapper.m_Debug_HideBubble;
-        public InputAction @MoveAnimalOn => m_Wrapper.m_Debug_MoveAnimalOn;
-        public InputAction @MoveAnimalOff => m_Wrapper.m_Debug_MoveAnimalOff;
+        public InputAction @Y => m_Wrapper.m_Debug_Y;
+        public InputAction @U => m_Wrapper.m_Debug_U;
+        public InputAction @I => m_Wrapper.m_Debug_I;
+        public InputAction @O => m_Wrapper.m_Debug_O;
+        public InputAction @P => m_Wrapper.m_Debug_P;
         public InputActionMap Get() { return m_Wrapper.m_Debug; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -485,40 +485,40 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_DebugActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_DebugActionsCallbackInterfaces.Add(instance);
-            @RandomiseBubble.started += instance.OnRandomiseBubble;
-            @RandomiseBubble.performed += instance.OnRandomiseBubble;
-            @RandomiseBubble.canceled += instance.OnRandomiseBubble;
-            @ShowBubble.started += instance.OnShowBubble;
-            @ShowBubble.performed += instance.OnShowBubble;
-            @ShowBubble.canceled += instance.OnShowBubble;
-            @HideBubble.started += instance.OnHideBubble;
-            @HideBubble.performed += instance.OnHideBubble;
-            @HideBubble.canceled += instance.OnHideBubble;
-            @MoveAnimalOn.started += instance.OnMoveAnimalOn;
-            @MoveAnimalOn.performed += instance.OnMoveAnimalOn;
-            @MoveAnimalOn.canceled += instance.OnMoveAnimalOn;
-            @MoveAnimalOff.started += instance.OnMoveAnimalOff;
-            @MoveAnimalOff.performed += instance.OnMoveAnimalOff;
-            @MoveAnimalOff.canceled += instance.OnMoveAnimalOff;
+            @Y.started += instance.OnY;
+            @Y.performed += instance.OnY;
+            @Y.canceled += instance.OnY;
+            @U.started += instance.OnU;
+            @U.performed += instance.OnU;
+            @U.canceled += instance.OnU;
+            @I.started += instance.OnI;
+            @I.performed += instance.OnI;
+            @I.canceled += instance.OnI;
+            @O.started += instance.OnO;
+            @O.performed += instance.OnO;
+            @O.canceled += instance.OnO;
+            @P.started += instance.OnP;
+            @P.performed += instance.OnP;
+            @P.canceled += instance.OnP;
         }
 
         private void UnregisterCallbacks(IDebugActions instance)
         {
-            @RandomiseBubble.started -= instance.OnRandomiseBubble;
-            @RandomiseBubble.performed -= instance.OnRandomiseBubble;
-            @RandomiseBubble.canceled -= instance.OnRandomiseBubble;
-            @ShowBubble.started -= instance.OnShowBubble;
-            @ShowBubble.performed -= instance.OnShowBubble;
-            @ShowBubble.canceled -= instance.OnShowBubble;
-            @HideBubble.started -= instance.OnHideBubble;
-            @HideBubble.performed -= instance.OnHideBubble;
-            @HideBubble.canceled -= instance.OnHideBubble;
-            @MoveAnimalOn.started -= instance.OnMoveAnimalOn;
-            @MoveAnimalOn.performed -= instance.OnMoveAnimalOn;
-            @MoveAnimalOn.canceled -= instance.OnMoveAnimalOn;
-            @MoveAnimalOff.started -= instance.OnMoveAnimalOff;
-            @MoveAnimalOff.performed -= instance.OnMoveAnimalOff;
-            @MoveAnimalOff.canceled -= instance.OnMoveAnimalOff;
+            @Y.started -= instance.OnY;
+            @Y.performed -= instance.OnY;
+            @Y.canceled -= instance.OnY;
+            @U.started -= instance.OnU;
+            @U.performed -= instance.OnU;
+            @U.canceled -= instance.OnU;
+            @I.started -= instance.OnI;
+            @I.performed -= instance.OnI;
+            @I.canceled -= instance.OnI;
+            @O.started -= instance.OnO;
+            @O.performed -= instance.OnO;
+            @O.canceled -= instance.OnO;
+            @P.started -= instance.OnP;
+            @P.performed -= instance.OnP;
+            @P.canceled -= instance.OnP;
         }
 
         public void RemoveCallbacks(IDebugActions instance)
@@ -551,10 +551,10 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     }
     public interface IDebugActions
     {
-        void OnRandomiseBubble(InputAction.CallbackContext context);
-        void OnShowBubble(InputAction.CallbackContext context);
-        void OnHideBubble(InputAction.CallbackContext context);
-        void OnMoveAnimalOn(InputAction.CallbackContext context);
-        void OnMoveAnimalOff(InputAction.CallbackContext context);
+        void OnY(InputAction.CallbackContext context);
+        void OnU(InputAction.CallbackContext context);
+        void OnI(InputAction.CallbackContext context);
+        void OnO(InputAction.CallbackContext context);
+        void OnP(InputAction.CallbackContext context);
     }
 }

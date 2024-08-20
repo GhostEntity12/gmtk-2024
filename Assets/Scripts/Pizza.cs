@@ -31,6 +31,8 @@ public class Pizza : MonoBehaviour
 
 	private void ServePizza(InputAction.CallbackContext ctx)
 	{
+		if (currentStatus != Status.AtCounter || GameManager.Instance.ActiveAnimal.IsMoving) return;
+		currentStatus = Status.Serving;
 		anim.SetTrigger("Serve");
 		GameManager.Instance.EvaluatePizza(scaleFactor);
 	}
@@ -66,6 +68,12 @@ public class Pizza : MonoBehaviour
 	public void MovePizza(bool toFrontCounter)
 	{
 		anim.SetBool("AtFrontCounter", toFrontCounter);
-		currentStatus = toFrontCounter ? Status.Serving : Status.AtRay;
+		currentStatus = toFrontCounter ? Status.AtCounter : Status.AtRay;
+	}
+
+	public void SpawnPizza()
+	{
+		anim.SetTrigger("SpawnPizza");
+		anim.SetBool("AtFrontCounter", false);
 	}
 }

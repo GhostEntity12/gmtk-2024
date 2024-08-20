@@ -110,7 +110,7 @@
             "id": "19156566-84cf-47a3-9f55-8b05e0a59f93",
             "actions": [
                 {
-                    "name": "RandomiseBubble",
+                    "name": "Y",
                     "type": "Button",
                     "id": "c67bab24-506e-4bf4-bbbb-04df39ab8b6c",
                     "expectedControlType": "Button",
@@ -119,7 +119,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ShowBubble",
+                    "name": "U",
                     "type": "Button",
                     "id": "bb93be9d-3838-4441-9ab1-8b15337d0f98",
                     "expectedControlType": "Button",
@@ -128,7 +128,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "HideBubble",
+                    "name": "I",
                     "type": "Button",
                     "id": "2791bc49-b838-4f2c-b976-7c9a34488454",
                     "expectedControlType": "Button",
@@ -137,7 +137,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MoveAnimalOn",
+                    "name": "O",
                     "type": "Button",
                     "id": "ea558ab9-b9a1-4568-a08a-c44374165434",
                     "expectedControlType": "Button",
@@ -146,7 +146,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MoveAnimalOff",
+                    "name": "P",
                     "type": "Button",
                     "id": "11a935a5-6d4e-4c88-af1d-ca6315eb537a",
                     "expectedControlType": "Button",
@@ -163,7 +163,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ShowBubble",
+                    "action": "U",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -174,7 +174,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MoveAnimalOn",
+                    "action": "O",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -185,7 +185,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MoveAnimalOff",
+                    "action": "P",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -196,7 +196,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "HideBubble",
+                    "action": "I",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -207,7 +207,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RandomiseBubble",
+                    "action": "Y",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
