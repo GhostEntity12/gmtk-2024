@@ -12,4 +12,6 @@ public class AnimalData : ScriptableObject
 	public float acceptableOffset = 0.25f;
 	public float okayOffset = 0.5f;
 	public float upsetOffset = 0.75f;
+
+	public AudioClip[] sounds;
 }
