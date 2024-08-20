@@ -16,6 +16,10 @@ public class GameManager : Singleton<GameManager>
 	/// </summary>
 	[SerializeField] private AnimalData[] animals = new AnimalData[0];
 
+	/// <summary>
+	/// Holds the "active animal" object. Shouldn't be overwritten at any point.
+	/// </summary>
+	[SerializeField] private Animal activeAnimal;
 
 	// Start is called before the first frame update
 	protected override void Awake()
