@@ -32,7 +32,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SwingLeft
+  m_Name: Ani_SwingLeft
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -46,7 +46,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: fe6e0739e163668459be772f5eecfa25, type: 2}
+  m_Motion: {fileID: 7400000, guid: 0a8b8d417905e3c49a2aa1bacc00a3f2, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -87,7 +87,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SwingRight
+  m_Name: Ani_SwingRight
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -101,7 +101,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 0b32abb74070fa643bc2d36212015dae, type: 2}
+  m_Motion: {fileID: 7400000, guid: 4b667ba9ea076314283c65ea417bfb3c, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
