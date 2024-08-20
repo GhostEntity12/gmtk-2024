@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7014338eee9b57349af4732e04f4c180, type: 3}
   m_Name: Cat
   m_EditorClassIdentifier: 
-  acceptableSizeRange: {x: 0, y: 0}
   sprite: {fileID: 21300000, guid: 5c108002bc35de94fbf0962a8ed9aaab, type: 3}
   speechBubbleOffset: {x: 0.25, y: 1.4}
   yOffset: 0.8
+  idealSizeRange: {x: 1.5, y: 2.25}
+  acceptableOffset: 0.25
+  okayOffset: 0.5
+  upsetOffset: 0.75
